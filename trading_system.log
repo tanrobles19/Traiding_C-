@@ -1,0 +1,31 @@
+2026-04-28 08:21:46 [INFO] Attempting to connect to IB on port 7497 with client ID 0
+2026-04-28 08:21:46 [INFO] Connecting to 127.0.0.1:7497 with clientId 0...
+2026-04-28 08:21:46 [INFO] Disconnecting
+2026-04-28 08:21:46 [ERROR] API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 7497)")
+2026-04-28 08:21:46 [ERROR] Make sure API port on TWS/IBG is open
+2026-04-28 08:21:46 [ERROR] ⚠️  Could not connect to IB (port 7497): [Errno 61] Connect call failed ('127.0.0.1', 7497)
+2026-04-28 08:21:46 [ERROR]    Open positions will not be available
+2026-04-28 08:21:46 [DEBUG] get_positions() called - IB Connected: False, IB object exists: True
+2026-04-28 08:21:46 [WARNING] Skipping IB query - IB connected: False, IB object: True
+2026-04-28 08:21:48 [DEBUG] get_positions() called - IB Connected: False, IB object exists: True
+2026-04-28 08:21:48 [WARNING] Skipping IB query - IB connected: False, IB object: True
+2026-04-28 08:21:50 [DEBUG] get_positions() called - IB Connected: False, IB object exists: True
+2026-04-28 08:21:50 [WARNING] Skipping IB query - IB connected: False, IB object: True
+2026-04-28 08:21:52 [DEBUG] get_positions() called - IB Connected: False, IB object exists: True
+2026-04-28 08:21:52 [WARNING] Skipping IB query - IB connected: False, IB object: True
+2026-04-28 08:21:54 [DEBUG] get_positions() called - IB Connected: False, IB object exists: True
+2026-04-28 08:21:54 [WARNING] Skipping IB query - IB connected: False, IB object: True
+2026-04-28 08:21:56 [DEBUG] get_positions() called - IB Connected: False, IB object exists: True
+2026-04-28 08:21:56 [WARNING] Skipping IB query - IB connected: False, IB object: True
+2026-04-28 08:21:58 [DEBUG] get_positions() called - IB Connected: False, IB object exists: True
+2026-04-28 08:21:58 [WARNING] Skipping IB query - IB connected: False, IB object: True
+2026-04-28 08:22:00 [DEBUG] get_positions() called - IB Connected: False, IB object exists: True
+2026-04-28 08:22:00 [WARNING] Skipping IB query - IB connected: False, IB object: True
+2026-04-28 08:22:02 [DEBUG] get_positions() called - IB Connected: False, IB object exists: True
+2026-04-28 08:22:02 [WARNING] Skipping IB query - IB connected: False, IB object: True
+2026-04-28 08:22:04 [DEBUG] get_positions() called - IB Connected: False, IB object exists: True
+2026-04-28 08:22:04 [WARNING] Skipping IB query - IB connected: False, IB object: True
+2026-04-28 08:22:06 [DEBUG] get_positions() called - IB Connected: False, IB object exists: True
+2026-04-28 08:22:06 [WARNING] Skipping IB query - IB connected: False, IB object: True
+2026-04-28 08:22:08 [DEBUG] get_positions() called - IB Connected: False, IB object exists: True
+2026-04-28 08:22:08 [WARNING] Skipping IB query - IB connected: False, IB object: True

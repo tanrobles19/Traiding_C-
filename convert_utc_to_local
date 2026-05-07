@@ -1,0 +1,25 @@
+import pandas as pd
+from polygon import RESTClient
+
+def get_previous_close_with_pandas(symbol: str, api_key: str):
+    client = RESTClient(api_key)
+    agg = client.get_previous_close_agg(symbol, adjusted="true")
+
+    df = pd.DataFrame([{
+        "ticker": agg.ticker,
+        "close": agg.close,
+        "high": agg.high,
+        "low": agg.low,
+        "open": agg.open,
+        "timestamp": agg.timestamp,
+        "volume": agg.volume,
+        "vwap": agg.vwap,
+    }])
+
+    close_price = df['close'].iloc[0]
+    return close_price
+
+
+api_key = "RfayaUNTghp76By4a7GHbnAJuV2tZ99Y"
+close = get_previous_close_with_pandas("AAPL", api_key)
+print(f"Cierre anterior (pandas): {close}")

@@ -1,0 +1,12 @@
+# UI Dependencies for Trading System Monitor
+# Install with: pip install -r requirements_ui.txt
+
+# Terminal UI Framework
+textual>=0.47.0
+
+# MySQL connector (already in main requirements)
+mysql-connector-python>=8.0.0
+
+# Optional: For future enhancements
+# rich>=13.0.0  # Already included with textual
+# asyncio  # Part of Python standard library

@@ -1,0 +1,250 @@
+
+CREATE TABLE "HistoryByMin" (
+	"id"	INTEGER,
+	"stockID"	TEXT,
+	"close"	NUMERIC NOT NULL,
+	"volume"	INTEGER NOT NULL,
+	"date"	TEXT NOT NULL,
+	"hour"	INTEGER NOT NULL,
+	"minute"	INTEGER NOT NULL,
+	"amPm"	TEXT,
+	PRIMARY KEY("id" AUTOINCREMENT),
+	FOREIGN KEY("stockID") REFERENCES "Stocks"("ticker")
+)
+
+CREATE TABLE "AggregatesByMin" (
+	"id"	INTEGER,
+	"stockID"	TEXT,
+	"volume"	INTEGER NOT NULL,
+	"hour"	INTEGER NOT NULL,
+	"minute"	INTEGER NOT NULL,
+	PRIMARY KEY("id" AUTOINCREMENT)
+)
+
+CREATE TABLE "AggregatesBySecondExperiment" (
+	"id"	INTEGER,
+	"symbol"	TEXT,
+	"close"	NUMERIC NOT NULL,
+	"volume"	INTEGER NOT NULL,
+	"date"	TEXT NOT NULL,
+	"hour"	INTEGER NOT NULL,
+	"minute"	INTEGER NOT NULL,
+	"second"	INTEGER NOT NULL,
+	"timestamp" INTEGER NOT NULL,
+	"transactions"  INTEGER NOT NULL,
+	"vwap"  INTEGER NOT NULL,
+	"amPm"	TEXT,
+	PRIMARY KEY("id" AUTOINCREMENT)
+)
+
+
+
+CREATE INDEX idx_history_by_min_lookup
+ON HistoryByMin(hour, minute, amPm, stockID);
+
+CREATE TABLE "MinuteCandles" (
+	"id"	INTEGER,
+	"ticker"	TEXT,
+	"close"	NUMERIC NOT NULL,
+	"volume"	INTEGER NOT NULL,
+	PRIMARY KEY("id" AUTOINCREMENT)
+)
+
+CREATE INDEX idx_ticker_close ON MinuteCandles (ticker, close);
+CREATE INDEX idx_ticker_volume ON MinuteCandles (ticker, volume);
+
+CREATE TABLE "Stocks" (
+	"ticker"	TEXT,
+	"close"	NUMERIC NOT NULL,
+	"stock_index" NUMERIC NOT NULL ,
+	PRIMARY KEY("ticker")
+)
+
+
+CREATE TABLE "TradeSignalsBuy" (
+	"id"	INTEGER,
+	"symbol"	TEXT,
+	"hour"	INTEGER,
+	"minute"	INTEGER,
+	"amPm"	TEXT,
+	"date"	TEXT,	
+	"close"	INTEGER,	
+	"volume"	INTEGER,
+	"relative_volume"	INTEGER,
+	"polygon_news_id"	INTEGER,	
+	"benzinga_news_id"	INTEGER,	
+	"finnhub_news_id"	INTEGER,	
+	PRIMARY KEY("id")
+)
+
+CREATE TABLE "TradeSignalsBuyPerSecond" (
+	"id"	INTEGER,
+	"symbol"	TEXT,
+	"hour"	INTEGER,
+	"minute"	INTEGER,
+	"close"	INTEGER,
+	"volume"	INTEGER,
+	"relative_volume"	INTEGER,
+	"timestamp"	TEXT,
+	"newsCount"	INTEGER,
+	"news_metadata"	TEXT,
+	"open"	INTEGER,
+	"high"	INTEGER,
+	"low"	INTEGER,
+	"vwap"	INTEGER,
+	"accumulated_volume"	INTEGER,
+	"averageDayVolume"	INTEGER,
+	"attempts_count"	INTEGER,
+	"purchasePrediction"	TEXT,
+	"aggregatesPerSecond"	INTEGER,
+	"relative_volume_hour"	INTEGER,
+	PRIMARY KEY("id")
+)
+
+CREATE INDEX idx_tradesbuy_symbol_timestamp ON TradeSignalsBuyPerSecond(symbol, timestamp DESC);
+
+-- Índice para consultas rápidas por símbolo y timestamp (útil para obtener señales por tiempo)
+CREATE INDEX idx_tradesbuy_symbol_ts ON TradeSignalsBuyPerSecond(symbol, timestamp);
+
+-- Índice por hora y minuto (útil si consultas señales por minuto para un símbolo)
+CREATE INDEX idx_tradesbuy_symbol_hm ON TradeSignalsBuyPerSecond(symbol, hour, minute);
+
+-- Índice por compra predicha y timestamp (útil si filtras por tipo de predicción y tiempo)
+CREATE INDEX idx_tradesbuy_purchase_ts ON TradeSignalsBuyPerSecond(purchasePrediction, timestamp);
+
+-- Índice por volumen relativo por hora (útil si filtras por este parámetro a nivel hora)
+CREATE INDEX idx_tradesbuy_relvol_hour ON TradeSignalsBuyPerSecond(relative_volume_hour);
+
+-- (Opcional) Índice por news_count y timestamp, si planeas filtrar por conteo de noticias y tiempo
+CREATE INDEX idx_tradesbuy_news_ts ON TradeSignalsBuyPerSecond(newsCount, timestamp);
+
+CREATE TABLE "TradeSignalsRaw" (
+	"id"	INTEGER,
+	"symbol"	TEXT,
+	"hour"	INTEGER,
+	"minute"	INTEGER,
+	"close"	INTEGER,
+	"volume"	INTEGER,
+	"relative_volume"	INTEGER,
+	"timestamp"	TEXT,
+	"purchasePrediction"	TEXT,
+	"relative_volume_hour"	INTEGER,
+	PRIMARY KEY("id")
+)
+
+-- Para series de tiempo por símbolo (consultas recientes por símbolo)
+CREATE INDEX idx_trades_symbol_ts ON TradeSignalsRaw(symbol, timestamp);
+
+-- Para rangos por tiempo (últimos N minutos en general)
+CREATE INDEX idx_trades_ts ON TradeSignalsRaw(timestamp);
+
+-- (Opcional) Si filtras mucho por señales de compra/venta recientes
+CREATE INDEX idx_trades_pred_ts ON TradeSignalsRaw(purchasePrediction, timestamp);
+
+-- (Opcional) Si consultas por hora/minuto dentro de un símbolo
+CREATE INDEX idx_trades_symbol_hm ON TradeSignalsRaw(symbol, hour, minute);
+
+CREATE TABLE "TradeSignalsLive" (
+	"id"	INTEGER,
+	"symbol"	TEXT,
+	"hour"	INTEGER,
+	"minute"	INTEGER,
+	"second"	INTEGER,
+	"close"	INTEGER,
+	"volume"	INTEGER,
+	"timestamp"	TEXT,
+	"attempts_count"	INTEGER,
+	PRIMARY KEY("id")
+);
+
+CREATE INDEX idx_symbol_hour_minute ON TradeSignalsLive(symbol, hour, minute);
+
+CREATE TABLE "TradeSignalsBuyNews" (
+	"id"	INTEGER,
+	"symbol"	TEXT,
+	"timestamp_buy"	TEXT,	
+	"ask_price"	INTEGER,	
+	"last_trade_price"	INTEGER,		
+	PRIMARY KEY("id" AUTOINCREMENT)
+)
+
+CREATE TABLE "TradeSignalsMonitorGrowth" (
+	"id"	INTEGER,
+	"symbol"	TEXT,
+	"hour"	INTEGER,
+	"minute"	INTEGER,
+	"second"	INTEGER,
+	"close"	INTEGER,
+	"volume"	INTEGER,
+	"timestamp"	TEXT,
+	"attempts_count"	INTEGER,
+	"data"	TEXT,
+	"current_second"	INTEGER,
+	"elapsed_seconds"	INTEGER,
+	"elapsed_seconds_33_percent"	INTEGER,
+	PRIMARY KEY("id")
+)
+
+
+CREATE TABLE "RelativeVolumeRatio" (
+	"id"	INTEGER,
+	"symbol"	TEXT,
+	"hour"	INTEGER NOT NULL,
+	"minute"	INTEGER NOT NULL,
+	"amPm"	TEXT,
+	"relative_volume" INTEGER NOT NULL,
+	PRIMARY KEY("id" AUTOINCREMENT),
+	FOREIGN KEY("symbol") REFERENCES "Stocks"("ticker")
+)
+
+CREATE TABLE "News" (
+	"id"	INTEGER,
+	"new_id"	INTEGER NOT NULL,
+	"title"	TEXT,
+	"date"	TEXT,
+	"link"	TEXT,
+	"stocks"	TEXT,
+	"timestamp"	TEXT,
+	"source"	TEXT,
+	PRIMARY KEY("id" AUTOINCREMENT)
+)
+
+SELECT t.*
+FROM "TradeSignalsBuyPerSecond" t
+INNER JOIN (
+    SELECT "symbol", MIN("timestamp") AS min_timestamp
+    FROM "TradeSignalsBuyPerSecond"
+    GROUP BY "symbol"
+) AS first_entries
+ON t."symbol" = first_entries."symbol" AND t."timestamp" = first_entries.min_timestamp;
+
+
+CREATE TABLE "Orders" (
+	"id"	INTEGER,
+	"symbol"	TEXT,
+	"start_timestamp"	TEXT,
+	"end_timestamp"	TEXT,
+	"filledPrice"	INTEGER,
+	"status"	TEXT,
+	"orderType"	TEXT,
+	"totalQuantity"	INTEGER,
+	"log"	TEXT,
+	"open_price"	INTEGER,
+	"polygon_second_close"	INTEGER,
+	"last_trade_price"	INTEGER,
+	"ask_price"	INTEGER,
+	"ask_size"	INTEGER,
+	"bid_price"	INTEGER,
+	"bid_size"	INTEGER,
+	PRIMARY KEY("id" AUTOINCREMENT)
+)
+
+CREATE TABLE "ResistanceSignals" (
+	"id"	INTEGER,
+	"symbol"	TEXT,
+	"kickOffTracking"	INTEGER,
+	"resistance_price"	INTEGER,
+	"volume"	INTEGER,
+	"timestamp"	TEXT,
+	PRIMARY KEY("id" AUTOINCREMENT)
+)

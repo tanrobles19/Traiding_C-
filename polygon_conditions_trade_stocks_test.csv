@@ -1,0 +1,56 @@
+id,name,abbreviation,description,updates_open_close,updates_high_low,updates_volume
+1,Acquisition,,,True,True,True
+2,Average Price Trade,,,False,False,True
+3,Automatic Execution,,,True,True,True
+4,Bunched Trade,,,True,True,True
+5,Bunched Sold Trade,,,False,True,True
+6,CAP Election,,,True,True,True
+7,Cash Sale,,,False,False,True
+8,Closing Prints,,,True,True,True
+9,Cross Trade,,,True,True,True
+10,Derivatively Priced,,,False,True,True
+11,Distribution,,,True,True,True
+12,Form T/Extended Hours,,,False,False,True
+13,Extended Hours (Sold Out Of Sequence),,,False,False,True
+14,Intermarket Sweep,,,True,True,True
+15,Market Center Official Close,,,False,False,False
+16,Market Center Official Open,,,False,False,False
+17,Market Center Opening Trade,,,True,True,True
+18,Market Center Reopening Trade,,,True,True,True
+19,Market Center Closing Trade,,,True,True,True
+20,Next Day,,,False,False,True
+21,Price Variation Trade,,,False,False,True
+22,Prior Reference Price,,,False,True,True
+23,Rule 155 Trade (AMEX),,,True,True,True
+24,Rule 127 (NYSE Only),,,True,True,True
+25,Opening Prints,,,True,True,True
+27,Stopped Stock (Regular Trade),,,True,True,True
+28,Re-Opening Prints,,,True,True,True
+29,Seller,,,False,False,True
+30,Sold Last,,,True,True,True
+31,Sold Last and Stopped Stock,,,True,True,True
+32,Sold (Out Of Sequence),,,False,True,True
+33,Sold (Out of Sequence) and Stopped Stock,,,False,True,True
+34,Split Trade,,,True,True,True
+35,Stock Option,,,True,True,True
+36,Yellow Flag Regular Trade,,,True,True,True
+37,Odd Lot Trade,,,False,False,True
+38,Corrected Consolidated Close (per listing market),,,True,True,False
+41,Trade Thru Exempt,,,True,True,True
+52,Contingent Trade,,,False,False,True
+53,Qualified Contingent Trade,,,False,False,True
+55,Opening Reopening Trade Detail,,,True,True,True
+57,Short Sale Restriction Activated,,,,,
+58,Short Sale Restriction Continued,,,,,
+59,Short Sale Restriction Deactivated,,,,,
+60,Short Sale Restriction In Effect,,,,,
+62,Financial Status - Bankrupt,,,,,
+63,Financial Status - Deficient,,,,,
+64,Financial Status - Delinquent,,,,,
+65,Financial Status - Bankrupt and Deficient,,,,,
+66,Financial Status - Bankrupt and Delinquent,,,,,
+67,Financial Status - Deficient and Delinquent,,,,,
+68,"Financial Status - Deficient, Delinquent, and Bankrupt",,,,,
+69,Financial Status - Liquidation,,,,,
+70,Financial Status - Creations Suspended,,,,,
+71,Financial Status - Redemptions Suspended,,,,,

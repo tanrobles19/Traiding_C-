@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  com.tan.trader.plist
+  ─────────────────────────────────────────────────────────────────
+
+  Daily trigger for the C++ trading system. Wakes the Mac from sleep
+  if needed, runs start_trading_day.sh which chains:
+      time sync → pre-market data pipeline → IB Gateway → trade_receiver
+
+  Schedule: 01:45 AM Costa Rica (UTC−6) every weekday.
+            ↳ pre-market data pipeline takes ~10–15 min
+            ↳ trader is up before 2:00 AM CR (= 4:00 AM ET pre-market open)
+
+  To install:
+      cp com.tan.trader.plist ~/Library/LaunchAgents/
+      launchctl load ~/Library/LaunchAgents/com.tan.trader.plist
+
+  To verify it's loaded:
+      launchctl list | grep com.tan.trader
+
+  To trigger manually (sanity test, doesn't wait for 1:45 AM):
+      launchctl start com.tan.trader
+
+  To stop / uninstall:
+      launchctl unload ~/Library/LaunchAgents/com.tan.trader.plist
+-->
+<plist version="1.0">
+<dict>
+
+    <!-- Unique identifier — used by `launchctl list / start / stop`. -->
+    <key>Label</key>
+    <string>com.tan.trader</string>
+
+    <!-- The script to execute. Must be the absolute path. -->
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/tan/experiments/polygon.io/start_trading_day.sh</string>
+    </array>
+
+    <!-- Working directory the script runs from. Inside the script we
+         `cd` to PROJECT_DIR explicitly anyway, but setting this also
+         ensures relative paths in any sub-command resolve sanely. -->
+    <key>WorkingDirectory</key>
+    <string>/Users/tan/experiments/polygon.io</string>
+
+    <!-- Schedule: every Monday–Friday at 01:45 local time (Costa Rica).
+         `Weekday` 1=Mon, 2=Tue, …, 5=Fri. We deliberately skip Sat/Sun
+         (no US market). For US holidays the script itself should bail
+         early — launchd has no holiday awareness. -->
+    <key>StartCalendarInterval</key>
+    <array>
+        <dict>
+            <key>Weekday</key><integer>1</integer>
+            <key>Hour</key><integer>1</integer>
+            <key>Minute</key><integer>45</integer>
+        </dict>
+        <dict>
+            <key>Weekday</key><integer>2</integer>
+            <key>Hour</key><integer>1</integer>
+            <key>Minute</key><integer>45</integer>
+        </dict>
+        <dict>
+            <key>Weekday</key><integer>3</integer>
+            <key>Hour</key><integer>1</integer>
+            <key>Minute</key><integer>45</integer>
+        </dict>
+        <dict>
+            <key>Weekday</key><integer>4</integer>
+            <key>Hour</key><integer>1</integer>
+            <key>Minute</key><integer>45</integer>
+        </dict>
+        <dict>
+            <key>Weekday</key><integer>5</integer>
+            <key>Hour</key><integer>1</integer>
+            <key>Minute</key><integer>45</integer>
+        </dict>
+    </array>
+
+    <!-- Capture stdout / stderr to dedicated files. The wrapper script
+         also tee's into ~/logs/trader_YYYYMMDD.log; these two are the
+         launchd-side fallback if the script dies before its own
+         `exec >> log` redirection runs. -->
+    <key>StandardOutPath</key>
+    <string>/Users/tan/logs/launchd_trader_stdout.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/tan/logs/launchd_trader_stderr.log</string>
+
+    <!-- Don't restart on exit — the trader is a one-shot daily run.
+         If you want auto-restart on crash within a session, change to
+         <true/> and add a KeepAlive condition. -->
+    <key>KeepAlive</key>
+    <false/>
+
+    <!-- Don't run on load — the schedule above is what fires it.
+         (If true, it would also fire the moment you `launchctl load`.) -->
+    <key>RunAtLoad</key>
+    <false/>
+
+    <!-- Important on laptops: make sure the inherited env has things
+         like /opt/homebrew/bin so `docker`, `python3`, `nc` resolve.
+         launchd runs with a minimal PATH by default. -->
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    </dict>
+
+</dict>
+</plist>

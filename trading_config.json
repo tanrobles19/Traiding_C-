@@ -1,0 +1,21 @@
+{
+  "_comment": "Single source of truth for trading thresholds. Read by the C++ trader at startup (cpp_ultra_low_latency/trading_config.h) AND by the Next.js dashboard (read+write via /api/config). Independent from the legacy Python trading_config.py.",
+  "relative_volume_factor": 1,
+  "increase_from_open_pct": 2,
+  "min_trade_size": 100,
+  "low_activity_threshold": 0.33,
+  "order_quantity": 100,
+  "float_threshold": 50000000,
+  "low_float_threshold": 7000000,
+  "min_price": 1,
+  "max_price": 8,
+  "trade_capital": 500,
+  "max_loss_tolerance_pct": 1,
+  "take_profit_pct": 20,
+  "news_enabled": 1,
+  "news_window_seconds": 120,
+  "news_retry_interval_seconds": 20,
+  "news_max_attempts": 3,
+  "historical_days": 5,
+  "max_spread_abs": 0.20
+}

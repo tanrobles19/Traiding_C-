@@ -1,0 +1,110 @@
+TNFA	TNF Pharmaceuticals Inc	https://ir.tnfpharma.com/news-events/press-releases	Health Care
+XAIR	Beyond Air Inc	https://www.beyondair.net/news-events/category/press-releases/	Health Care
+PCSA	Processa Pharmaceuticals Inc	https://www.processapharmaceuticals.com/investors/news-events/press-releases	Health Care
+IXHL	Incannex Healthcare Inc	https://ir.incannex.com/news-events/news-releases	Health Care
+ABP	ABPRO Holdings Inc	https://abpro.co/news/	Health Care
+HSDT	Helius Medical Technologies Inc	https://ir.heliusmedical.com/news-events/news-releases	Health Care
+GNPX	Genprex Inc	https://www.genprex.com/category/press-releases/	Health Care
+CLDI	Calidi Biotherapeutics Inc	https://www.calidibio.com/blog/	Health Care
+VTAK	Catheter Precision Inc	https://www.catheterprecision.com/news-events/	Health Care
+NUWE	Nuwellis Inc	https://ir.nuwellis.com/newsroom	Health Care
+ADAP	Adaptimmune Therapeutics PLC	https://www.adaptimmune.com/investors-and-media/news-center/press-releases	Health Care
+BDSX	Biodesix Inc	https://investors.biodesix.com/news-and-events/news-releases	Health Care
+DHAI	DIH Holding US Inc	https://ir.dih.com/news-events/news-releases	Health Care
+AZTR	Azitra Inc	https://ir.azitrainc.com/news-events/news-releases	Health Care
+LPTX	Leap Therapeutics Inc	https://investors.leaptx.com/news-events/news-releases	Health Care
+CODX	Co-Diagnostics Inc	https://ir.co-dx.com/press-releases	Health Care
+ASBP	Aspire Biopharma Holdings Inc	https://aspirebiolabs.com/news/	Health Care
+MRSN	Mersana Therapeutics Inc	https://ir.mersana.com/press-releases	Health Care
+RENB	Renovaro Inc	https://ir.renovarogroup.com/news/default.aspx	Health Care
+ATHA	Athira Pharma Inc	https://www.athira.com/news/	Health Care
+BIAF	bioAffinity Technologies Inc	https://ir.bioaffinitytech.com/news-events/press-releases	Health Care
+CGTX	Cognition Therapeutics Inc	https://ir.cogrx.com/press-releases/	Health Care
+GBIO	Generation Bio Co	https://investors.generationbio.com/news-events/news-releases	Health Care
+OVID	Ovid Therapeutics Inc	https://investors.ovidrx.com/news/default.aspx	Health Care
+SPRC	Scisparc Ltd	https://investor.scisparc.com/press-releases/	Health Care
+IGC	IGC Pharma Inc	https://igcpharma.com/category/news/	Health Care
+EQ	Equillium Inc	https://www.equilliumbio.com/investors/press-releases/	Health Care
+MBRX	Moleculin Biotech Inc	https://moleculin.com/press-releases/	Health Care
+PSTV	Plus Therapeutics Inc	https://ir.plustherapeutics.com/press-releases	Health Care
+INTS	Intensity Therapeutics Inc	https://ir.intensitytherapeutics.com/news-events/press-releases	Health Care
+APLT	Applied Therapeutics Inc	https://ir.appliedtherapeutics.com/news-releases	Health Care
+CYCC	Cyclacel Pharmaceuticals Inc	https://investor.cyclacel.com/news-releases	Health Care
+PASG	Passage Bio Inc	https://www.passagebio.com/investors-and-news/press-releases-and-statements/	Health Care
+RLYB	Rallybio Corp	https://investors.rallybio.com/news-releases	Health Care
+ADIL	Adial Pharmaceuticals Inc	https://www.adial.com/news-events/#	Health Care
+RVPH	Reviva Pharmaceuticals Holdings Inc	https://revivapharma.com/press-releases/	Health Care
+TSBX	Turnstone Biologics Corp	https://ir.turnstonebio.com/news-events/news-releases	Health Care
+ELEV	Elevation Oncology Inc	http://investors.elevationoncology.com/news-releases	Health Care
+PRPH	Prophase Labs Inc	https://ir.prophaselabs.com/news-events/press-releases	Health Care
+ENTO	Entero Therapeutics Inc	https://enterothera.com/newsroom	Health Care
+BCAB	Bioatla Inc	https://ir.bioatla.com/news-and-events/news-releases	Health Care
+CARM	Carisma Therapeutics Inc	https://ir.carismatx.com/news-events/news-releases	Health Care
+TLRY	Tilray Brands Inc	https://ir.tilray.com/news-events/news-releases	Health Care
+ICU	SeaStar Medical Holding Corp	https://investors.seastarmedical.com/news/default.aspx	Health Care
+ALXO	ALX Oncology Holdings Inc	https://ir.alxoncology.com/news	Health Care
+WORX	Scworx Corp	https://ir.scworx.com/press-releases	Health Care
+COSM	Cosmos Health Inc	https://investors.cosmoshealthinc.com/press-releases	Health Care
+ACXP	Acurx Pharmaceuticals Inc	https://www.acurxpharma.com/news-media/press-releases	Health Care
+TOVX	Theriva Biologics Inc	https://therivabio.com/investors/news/?post_types=press_releases	Health Care
+PHGE	Biomx Inc	https://ir.biomx.com/news-events/press-releases	Health Care
+WINT	Windtree Therapeutics Inc	https://ir.windtreetx.com/press-releases	Health Care
+NXTC	NextCure Inc	https://ir.nextcure.com/news-releases	Health Care
+MHUA	Meihua International Medical Technologies Co Ltd	http://ir.meihuamed.com/ir/Ne_index_gci_56.html	Health Care
+HBIO	Harvard Bioscience Inc	https://investor.harvardbioscience.com/press-releases	Health Care
+TLPH	Talphera Inc	https://ir.talphera.com/news-and-events/news-releases	Health Care
+PMN	ProMIS Neurosciences Inc	https://www.promisneurosciences.com/news-media/press-releases	Health Care
+SENS	Senseonics Holdings Inc	https://www.senseonics.com/investor-relations/news-releases/	Health Care
+VXRT	Vaxart Inc	https://investors.vaxart.com/news/press-releases	Health Care
+ONMD	Onemednet Corp	https://www.onemednet.com/news/	Health Care
+IPSC	Century Therapeutics Inc	https://investors.centurytx.com/press-releases	Health Care
+VRCA	Verrica Pharmaceuticals Inc	https://verrica.com/press-releases/	Health Care
+SGMO	Sangamo Therapeutics Inc	https://investor.sangamo.com/news-releases	Health Care
+RANI	Rani Therapeutics Holdings Inc	https://ir.ranitherapeutics.com/news-events/news-releases	Health Care
+OTRK	Ontrak Inc	https://ontrakhealth.com/investors/press-releases/	Health Care
+VERU	Veru Inc	https://ir.verupharma.com/news-events/press-releases	Health Care
+PAVM	PAVmed Inc	https://ir.pavmed.com/press-releases	Health Care
+BFRI	Biofrontera Inc	https://www.biofrontera.com/en/investors/financial-announcements/corporate-news	Health Care
+DRMA	Dermata Therapeutics Inc	https://ir.dermatarx.com/news-events/press-releases	Health Care
+NBY	NovaBay Pharmaceuticals Inc	https://investors.novabay.com/press-releases	Health Care
+TNYA	Tenaya Therapeutics Inc	https://investors.tenayatherapeutics.com/news-events/news-releases	Health Care
+RLMD	Relmada Therapeutics Inc	https://www.relmada.com/for-investors/news	Health Care
+FBLG	Fibrobiologics Inc	https://ir.fibrobiologics.com/news-events/press-releases	Health Care
+RVP	Retractable Technologies Inc	https://www.retractable.com/category/press-releases/	Health Care
+ACET	Adicet Bio Inc	https://investor.adicetbio.com/news-and-events/news-releases	Health Care
+DRRX	DURECT Corp	https://www.durect.com/investors/news/	Health Care
+XTNT	Xtant Medical Holdings Inc	https://xtantmedical.com/news/	Health Care
+MTVA	MetaVia Inc	https://ir.metaviatx.com/press-releases	Health Care
+SILO	Silo Pharma Inc	https://ir.silopharma.com/news-releases/	Health Care
+ASRT	Assertio Holdings Inc	https://investor.assertiotx.com/news/default.aspx	Health Care
+ZJYL	Jin Medical International Ltd	https://www.zhjmedical.com/companyNews-en/	Health Care
+TRIB	Trinity Biotech PLC	https://www.trinitybiotech.com/investor-relations/press-releases/	Health Care
+CNTX	Context Therapeutics Inc	https://ir.contexttherapeutics.com/news-and-events/press-releases	Health Care
+PROK	ProKidney Corp	https://investors.prokidney.com/news-events/news-releases	Health Care
+KAPA	Kairos Pharma Ltd	https://investors.kairospharma.com/news-and-events/news-releases/default.aspx	Health Care
+DRIO	DarioHealth Corp	https://dariohealth.investorroom.com/PressReleases	Health Care
+LFWD	Lifeward Ltd	https://ir.rewalk.com/press-releases	Health Care
+XLO	Xilio Therapeutics Inc	https://ir.xiliotx.com/news-and-events/news-releases	Health Care
+MODD	Modular Medical Inc	https://ir.modular-medical.com/press-releases.php	Health Care
+NMTC	NeuroOne Medical Technologies Corp	https://ir.nmtc1.com/press-releases	Health Care
+SCYX	SCYNEXIS Inc	https://www.scynexis.com/news/	Health Care
+NAUT	Nautilus Biotechnology Inc	https://investors.nautilus.bio/news-events/news-releases	Health Care
+IMUX	Immunic Inc	https://ir.imux.com/news-releases	Health Care
+PALI	Palisade Bio Inc	https://palisadebio.com/press-releases/	Health Care
+ADVB	Advanced Biomed Inc	http://ir.advanbiomed.com/new.html?type=press	Health Care
+ZVSA	Zyversa Therapeutics Inc	https://investors.zyversa.com/news-events/news-releases	Health Care
+LIXT	Lixte Biotechnology Holdings Inc	https://ir.lixte.com/news-events/press-releases	Health Care
+WOK	Work Medical Technology Group Ltd	no	Health Care
+KLTO	Klotho Neurosciences Inc	https://ir.klothoneuro.com/press-releases/	Health Care
+IVVD	Invivyd Inc	https://investors.invivyd.com/news-events/press-releases	Health Care
+MLSS	Milestone Scientific Inc	https://www.milestonescientific.com/investors/news-events/press-releases	Health Care
+IRWD	Ironwood Pharmaceuticals Inc	https://investor.ironwoodpharma.com/press-releases/default.aspx	Health Care
+STRO	Sutro Biopharma Inc	https://www.sutrobio.com/news/news-releases/	Health Care
+AQB	AquaBounty Technologies Inc	https://investors.aquabounty.com/press-releases	Health Care
+PLRZ	Polyrizon Ltd	https://investor.polyrizon-biotech.com/pressreleases	Health Care
+IMNN	Imunon Inc	https://investors.imunon.com/press-releases	Health Care
+CUE	Cue Biopharma Inc	https://www.cuebiopharma.com/news/#news-section	Health Care
+HYPR	Hyperfine Inc	https://investors.hyperfine.io/news-events/press-releases	Health Care
+CHRS	Coherus Oncology Inc	https://investors.coherus.com/press-releases	Health Care
+ONCY	Oncolytics Biotech Inc	https://oncolyticsbiotech.com/investor-overview/news/	Health Care
+IBO	Impact Biomedical Inc	https://www.impactbiomedinc.com/news/	Health Care
