@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  LaunchAgent: com.tan.trader
+
+  Fires start_trader.sh at 02:00 Costa Rica time, Monday-Friday only.
+  US pre-market opens 04:00 ET (= 02:00 CR), so this gets the trader
+  online right at the open without manual intervention.
+
+  Install:
+    cp scripts/com.tan.trader.plist ~/Library/LaunchAgents/
+    launchctl unload ~/Library/LaunchAgents/com.tan.trader.plist 2>/dev/null
+    launchctl load   ~/Library/LaunchAgents/com.tan.trader.plist
+
+  Verify it's registered:
+    launchctl list | grep com.tan.trader
+
+  Manual fire (test without waiting for 2 AM):
+    launchctl start com.tan.trader
+
+  Disable:
+    launchctl unload ~/Library/LaunchAgents/com.tan.trader.plist
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.tan.trader</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/tan/experiments/polygon.io/scripts/start_trader.sh</string>
+    </array>
+
+    <!--
+      StartCalendarInterval doesn't accept ranges, so each weekday is
+      its own dict. Weekday: 1=Mon, 2=Tue, 3=Wed, 4=Thu, 5=Fri.
+      Time is system-local (TZ on this Mac is America/Costa_Rica).
+    -->
+    <key>StartCalendarInterval</key>
+    <array>
+        <dict>
+            <key>Weekday</key><integer>1</integer>
+            <key>Hour</key><integer>2</integer>
+            <key>Minute</key><integer>0</integer>
+        </dict>
+        <dict>
+            <key>Weekday</key><integer>2</integer>
+            <key>Hour</key><integer>2</integer>
+            <key>Minute</key><integer>0</integer>
+        </dict>
+        <dict>
+            <key>Weekday</key><integer>3</integer>
+            <key>Hour</key><integer>2</integer>
+            <key>Minute</key><integer>0</integer>
+        </dict>
+        <dict>
+            <key>Weekday</key><integer>4</integer>
+            <key>Hour</key><integer>2</integer>
+            <key>Minute</key><integer>0</integer>
+        </dict>
+        <dict>
+            <key>Weekday</key><integer>5</integer>
+            <key>Hour</key><integer>2</integer>
+            <key>Minute</key><integer>0</integer>
+        </dict>
+    </array>
+
+    <!-- Don't fire on launchctl load — only on the calendar schedule. -->
+    <key>RunAtLoad</key>
+    <false/>
+
+    <!--
+      Last-resort capture for anything the script writes BEFORE its
+      own `exec >> $LOG_FILE` redirect kicks in (typically nothing,
+      but good for debugging launchd-level failures like "script not
+      found" or "permission denied").
+    -->
+    <key>StandardOutPath</key>
+    <string>/Users/tan/experiments/polygon.io/logs/trader/launchd.out</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/tan/experiments/polygon.io/logs/trader/launchd.err</string>
+</dict>
+</plist>
